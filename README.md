@@ -1,2 +1,2 @@
 # blockify
-A JavaScript tool to block IPs
+Basically security written in JavaScript.
