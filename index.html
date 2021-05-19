@@ -27,7 +27,7 @@ To block an IP using a file, use this other line of code:
   blockify.fromFile('file URL here', 'optional message (leave blank for default message)');
 </code>
 <script>
-  var fns="javascript:localStorage.removeItem('ipblock'); location.href='/';";
+  var fns="javascript:localStorage.removeItem('ipblock'); location.href='/blockify';";
   var item=localStorage.getItem('ipblock');
   if (item){
       blockify.blockIP(item, 'This is a Blockify demo. Click <a href="' + fns + '">here</a> to retry this demo or to learn more about Blockify.');
