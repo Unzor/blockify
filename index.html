@@ -1,0 +1,47 @@
+<script src="blockify.min.js"></script>
+<h1>
+  Blockify
+</h1>
+<p>
+  A tool to block IPs easily with JavaScript.
+</p>
+<button>
+Demo
+</button>
+<h1>
+  How to use Blockify
+</h1>
+<p>
+  First, get Blockify by clicking <a href="blockify.min.js">here.</a>
+</p>
+<p>
+To block an IP, use this simple line of code:
+</p>
+<code>
+  blockify.blockIP('your ip here', 'optional message (leave blank for default message)');
+</code>
+<p>
+To block an IP using a file, use this other line of code:
+</p>
+<code>
+  blockify.fromFile('file URL here', 'optional message (leave blank for default message)');
+</code>
+<script>
+  var fns="javascript:localStorage.removeItem('ipblock'); location.href='/';";
+  var item=localStorage.getItem('ipblock');
+  if (item){
+      blockify.blockIP(item, 'This is a Blockify demo. Click <a href="' + fns + '">here</a> to retry this demo or to learn more about Blockify.');
+  }
+    function block(){
+         $.getJSON("https://api.ipify.org?format=json", 
+                                          function(data) { 
+  
+            // Setting block
+                localStorage.setItem('ipblock', data.ip);
+           location.reload();
+
+        });
+  }
+  
+  document.querySelector('button').onclick=block;
+</script>
